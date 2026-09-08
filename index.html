@@ -90,7 +90,18 @@ anywhere but your own phone.</p>
   <tr><td>Notifications</td><td>To show the reminder when the next feed is due</td></tr>
   <tr><td>Run at startup</td><td>To restore a pending reminder after the phone restarts</td></tr>
   <tr><td>Vibrate</td><td>So the reminder can vibrate if you choose that setting</td></tr>
+  <tr>
+    <td>View network connections,<br>foreground service,<br>prevent phone from sleeping</td>
+    <td>Required by the Android background-work library that runs the
+        <strong>Breast</strong> and <strong>Bottle</strong> buttons on the home
+        screen widget, so a tap there records a feed even when the app is
+        closed. None of these grants access to the internet.</td>
+  </tr>
 </table>
+<p>That last row is the complete list — if you inspect the app's permissions on
+your phone you will see those three alongside the first three, and nothing else.
+<strong>The internet permission is not among them</strong>, which is why the app
+has no way to send anything anywhere.</p>
 <p>Tummy Timer deliberately asks for <strong>no storage permission</strong>. When
 you export a backup or a spreadsheet, Android's own file picker asks you where to
 save it and grants the app access to that one file only. When you restore a
@@ -101,6 +112,13 @@ backup, the same thing happens in reverse.</p>
 the file is written wherever you choose — a folder on your phone, a cloud drive, an
 email. Once it leaves the app it is yours, and it is governed by whatever service
 you saved it to, not by us. We never see it.</p>
+
+<h2>The "rate this app" prompt</h2>
+<p>After you have logged a number of feeds, the app may once ask whether you
+would like to rate it. That opens Google Play's own rating dialog, which is part
+of Play and not part of Tummy Timer. We do not see whether you rated it, what you
+rated it, or whether you dismissed it, and nothing about your feeds is involved.
+The app never asks again.</p>
 
 <h2>Android's own backup</h2>
 <p>Android may include the app's data in the device backup tied to your Google
